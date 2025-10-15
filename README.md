@@ -1,3 +1,16 @@
-Woosh is a Berkeley Skydeck-backed startup that aims to revolutionize local business deliveries (less-than-pallet loads; 50-1000 pounds) by delivering to local businesses via empty space within commuter vehicles. They plan to launch in 2027 and have a couple companies (i.e. medical supplies company) interested in this opportunity.
+# React + Vite
 
-We are tasked with creating a full-stack website that provides users with secure authentication, a safe and reliable database, and an intuitive, innovative UI/UX design, along with integrated features such as a chatbot. If time permits and our clients approve, we may also include dashboards for managing deliveries and implement app-like functionality where businesses can place orders and drivers can track and fulfill them.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## React Compiler
+
+The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

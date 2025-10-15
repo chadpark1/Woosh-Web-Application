@@ -1,0 +1,9 @@
+langchain
+langchain-community
+langchain-openai
+faiss-cpu
+huggingface-hub
+python-dotenv
+tiktoken
+pypdf 
+docx2txt

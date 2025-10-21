@@ -1,4 +1,6 @@
 import { useState } from "react";
+import dotenv from "dotenv";
+dotenv.config();
 
 export default function Chat() {
   const [messages, setMessages] = useState([

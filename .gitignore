@@ -1,2 +1,41 @@
-.env
+# Node
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Frontend build output
+fronted/dist/
+fronted/.vite/
+*.log
+
+# Server build cache
+server/node_modules/
+server/dist/
+
+# Python / LangChain
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+.eggs/
+.venv/
+env/
+venv/
+faiss_db/
+*.faiss
+*.npy
+*.npz
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# IDE / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+Thumbs.db

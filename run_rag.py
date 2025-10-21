@@ -1,28 +1,27 @@
 import os
+import json
+import argparse
 from dotenv import load_dotenv
+
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 
-
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
-
 if not api_key:
-    raise ValueError("can't find env")
+    raise ValueError("can't find env: OPENAI_API_KEY")
 
 os.environ["OPENAI_API_KEY"] = api_key
 
-
 embeddings = HuggingFaceEmbeddings(model_name="intfloat/multilingual-e5-small")
-db = FAISS.load_local("faiss_db", embeddings, allow_dangerous_deserialization=True)
+DB_PATH = os.getenv("FAISS_DB_PATH", "faiss_db")
+db = FAISS.load_local(DB_PATH, embeddings, allow_dangerous_deserialization=True)
 retriever = db.as_retriever(search_kwargs={"k": 5})
 
-
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.7)
-
 
 prompt_template = """
 You are startup Woosh’s helpful customer support assistant.
@@ -42,13 +41,12 @@ Context:
 
 Question: {question}
 Answer:
-"""
+""".strip()
 
 QA_PROMPT = PromptTemplate(
     input_variables=["context", "question"],
     template=prompt_template
 )
-
 
 qa_chain = RetrievalQA.from_chain_type(
     llm=llm,
@@ -57,11 +55,20 @@ qa_chain = RetrievalQA.from_chain_type(
     chain_type_kwargs={"prompt": QA_PROMPT}
 )
 
+def answer(question: str) -> str:
+    try:
+        resp = qa_chain.run(question)
+        text = (resp or "").strip()
+        if not text:
+            return "Sorry — I don’t have that info in my context yet."
+        return text
+    except Exception as e:
+        return f"Error: {e}"
 
-print("💬 Woosh RAG Chat Ready!")
-while True:
-    query = input("\n❓ Your question (or 'exit'): ")
-    if query.lower() in ["exit", "quit"]:
-        break
-    answer = qa_chain.run(query)
-    print("🤖", answer)
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--question", required=True)
+    args = parser.parse_args()
+
+    reply = answer(args.question)
+    print(json.dumps({"reply": reply}))

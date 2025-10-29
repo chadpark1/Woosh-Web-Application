@@ -1,17 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8" />
   <title>Login</title>
+  <!-- Load Supabase client from CDN -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    // Your Supabase credentials
+    window.SUPABASE_URL = "https://rkmouctjqrsqgukjrsoz.supabase.co";
+    window.SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJrbW91Y3RqcXJzcWd1a2pyc296Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA0NTk1OTcsImV4cCI6MjA3NjAzNTU5N30.vFhkvO8-yWwn0y986Qry4uRX2Ggcu9T60tjzFc6zqF4";
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+      text-align: center;
+    }
+    form {
+      display: inline-block;
+      text-align: left;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 15px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
+
 <body>
   <h2>Login</h2>
 
   <form id="loginForm">
-    <label>Username:</label>
-    <input type="text" id="username" required><br><br>
+    <label>Email:</label>
+    <input type="email" id="email" required />
 
     <label>Password:</label>
-    <input type="password" id="password" required><br><br>
+    <input type="password" id="password" required />
 
     <button type="submit">Login</button>
   </form>
@@ -22,25 +62,26 @@
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const username = document.getElementById("username").value;
+      const email = document.getElementById("email").value.toLowerCase();
       const password = document.getElementById("password").value;
 
-      try {
-        const response = await fetch("http://127.0.0.1:5000/api/login", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ username, password })
-        });
+      const supabase = window.supabase.createClient(
+        window.SUPABASE_URL,
+        window.SUPABASE_ANON_KEY
+      );
 
-        const result = await response.json();
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
 
-        if (result.success) {
-          alert("Login successful");
-        } else {
-          alert("Error: " + result.message);
-        }
-      } catch (err) {
-        console.error(err);
+      if (error) {
+        alert("Error: " + error.message);
+      } else {
+        alert("Login successful!");
+        console.log("Session data:", data);
+        // Example: redirect to another page
+        // window.location.href = "dashboard.html";
       }
     });
   </script>

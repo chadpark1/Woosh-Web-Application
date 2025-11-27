@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woosh</title>
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="../styles/base.css">
+
+    <!-- Font Awesome Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../styles/about.css">
+</head>
+<body>
+
+    <!-- Top Navbar -->
+    <nav id="navbar-container">
+        <div id="left-navbar">
+            <img src="../assets/logo.png" id="logo" alt="Logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div id="right-navbar">
+            <button id="navbar-signup-button">Get Started</button>
+        </div>
+    </nav>
+
+    <div id="page-container">
+
+        <div id="about-header">
+            <h1 id="page-title">About</h1>
+            <h3 id="page-subtitle" style="color: rgb(194, 147, 28);">WOOSH: TRANSFORMING LOGISTICS THROUGH INNOVATION</h3>
+            <div class="divider"></div>
+        </div>
+
+        <div id="about-content">
+            <p id="about-description">
+                Woosh is a cutting-edge logistics platform that redefines the concept of shipping and delivery.
+                Operating as a micro-shipping company, Woosh leverages the underutilized capacity of private
+                vehicles and business fleets, integrating seamlessly with map services to optimize logistics
+                operations, providing deliveries of Less-than-Pallet-Load (LPL) shipments.
+            </p>
+
+            <div id="about-grid">
+                <div class="about-item reveal-on-scroll">
+                    <h2>VISION</h2>
+                    <p>
+                        Woosh envisions a future where logistics is not only efficient but also environmentallyresponsible. 
+                        We aim to be at the forefront of logistic innovations, constantly evolving to meet the dynamic needs of the 
+                        market and setting new standards in the industry
+                    </p>
+                </div>
+                <div class="about-item reveal-on-scroll">
+                    <h2>MISSION</h2>
+                    <p>
+                        Our mission is to transform everyday commutes and idle business fleets into a powerful logistics network. 
+                        This not only enhances delivery efficiency but also significantly reduces environmental impact, 
+                        paving the way for a sustainable logistics model.
+                    </p>
+                </div>
+                <div class="about-item reveal-on-scroll">
+                    <h2>TARGET MARKET</h2>
+                    <p>
+                        Woosh is primarily aimed at businesses requiring inter-facility deliveries, including e-commerce, retail, 
+                        and other sectors reliant on efficient logistics services. We also target private vehicle owners and 
+                        business fleet operators as potential service providers within our network.
+                    </p>
+                </div>
+                <div class="about-item reveal-on-scroll">
+                    <h2>CURRENT STATUS</h2>
+                    <p>
+                        We are in the early stages of development, focusing on launching a Pilot Program, gathering invaluable feedback 
+                        and implementing it into our MVP (Minimum Viable Product), and establishing partnerships with potential 
+                        clients and service providers.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- ===========================
+         Footer
+         =========================== -->
+    <footer class="woosh-footer">
+        <div class="footer-content">
+            <!-- Brand -->
+            <div class="footer-column footer-brand">
+                <h1>WOOSH</h1>
+            </div>
+
+            <!-- Subscribe Form -->
+            <div class="footer-column footer-subscribe">
+                <h2>Subscribe</h2>
+                <form action="#" method="post" class="subscribe-form">
+                    <div class="input-group">
+                        <input type="email" placeholder="Email Address" required>
+                        <button type="submit" aria-label="Subscribe">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <label class="privacy-checkbox">
+                        <input type="checkbox" required>
+                        I accept the <a href="#" class="privacy-link">privacy policy.</a>
+                    </label>
+                </form>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-column footer-links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Social / Bottom Line -->
+        <div class="footer-bottom">
+            <div class="social-icons">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
+            </div>
+            <hr class="footer-separator">
+            <p class="copyright">&copy; 2025 Woosh Logistics Inc.</p>
+        </div>
+    </footer>
+
+    <!-- ===========================
+         Scripts
+         =========================== -->
+    <script>
+        (function () {
+            /**
+             * Initialize animations and scroll behavior once the DOM is ready.
+             */
+            const onReady = () => {
+                // Mark the body as loaded to trigger .reveal-on-load transitions
+                document.body.classList.add('loaded');
+
+                /**
+                 * Toggle the "scrolled" class on the body based on scroll position.
+                 * This powers the navbar background and shadow change.
+                 */
+                const setScrolled = () => {
+                    if (window.scrollY > 10) {
+                        document.body.classList.add('scrolled');
+                    } else {
+                        document.body.classList.remove('scrolled');
+                    }
+                };
+
+                // Run once on load to set initial state
+                setScrolled();
+
+                // Update on scroll (passive for performance)
+                window.addEventListener('scroll', setScrolled, { passive: true });
+
+                /**
+                 * IntersectionObserver for elements that should reveal
+                 * as they enter the viewport (.reveal-on-scroll).
+                 */
+                const observer = new IntersectionObserver(
+                    (entries, obs) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('in-view');
+                                // Stop observing once it's visible to avoid re-triggering
+                                obs.unobserve(entry.target);
+                            }
+                        });
+                    },
+                    { threshold: 0.15 } // Reveal when ~15% of the element is visible
+                );
+
+                // Attach observer to all scroll-reveal elements
+                document
+                    .querySelectorAll('.reveal-on-scroll')
+                    .forEach(el => observer.observe(el));
+            };
+
+            // Run on DOMContentLoaded or immediately if DOM is already ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', onReady);
+            } else {
+                onReady();
+            }
+        })();
+    </script>
+</body>
+</html>

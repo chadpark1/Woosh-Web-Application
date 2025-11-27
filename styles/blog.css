@@ -1,0 +1,285 @@
+/* ===========================
+    Blog Page Specific Styles
+   =========================== */
+
+.contact-divider {
+    background-color: #e2e8f0;
+    height: 1px;
+    width: 100%;
+}
+
+/* Controls: Search + New Post */
+#controls-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.search-wrapper {
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+#search-bar {
+    padding: 10px 15px 10px 35px; /* Left padding for icon */
+    font-size: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 50px;
+    width: 250px;
+    outline: none;
+    color: #475569;
+}
+
+#new-post-button {
+    background-color: #155e75; /* Dark Teal */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.2s;
+}
+
+#new-post-button:hover {
+    background-color: #104b5e;
+}
+
+/* --- Main Layout Section --- */
+#posts-section {
+    margin-top: 30px;
+    display: flex;
+    gap: 50px;
+    height: 750px; /* Fixed height to allow inner scrolling */
+    margin-bottom: 60px;
+}
+
+/* --- Sidebar --- */
+#posts-sidebar {
+    width: 150px;
+    flex-shrink: 0;
+    padding-top: 20px;
+}
+
+.sidebar-group {
+    margin-bottom: 40px;
+}
+
+.sidebar-group h3 {
+    font-size: 14px;
+    color: #1f7a8c; /* Teal heading */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-group ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-group li {
+    margin-bottom: 8px;
+}
+
+.sidebar-group a {
+    text-decoration: none;
+    color: #475569;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.sidebar-group a:hover {
+    color: #1f7a8c;
+}
+
+/* --- Posts List (The Scrollable Container) --- */
+#posts-list {
+    flex-grow: 1;
+    background-color: #f0f4f7; /* The light blue/grey box background */
+    border-radius: 12px;
+    /* Box shadow to give it depth inside */
+    padding: 40px 60px;
+    overflow-y: auto; /* Enables the scrollbar */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Custom Scrollbar Styling (Matches Screenshot) */
+#posts-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+#posts-list::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 20px 0;
+}
+
+#posts-list::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 10px;
+}
+
+/* --- Individual Post Card --- */
+.post {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.post-content {
+    flex: 1;
+}
+
+.post-date {
+    display: block;
+    color: #1f7a8c; /* Teal date */
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.post-content h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: #1e293b;
+}
+
+.post-excerpt {
+    font-size: 0.8rem; /* Small text as per screenshot */
+    color: #94a3b8; /* Muted grey */
+    line-height: 1.5;
+    margin-bottom: 15px;
+    max-width: 90%;
+}
+
+/* Meta Data Row */
+.post-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #64748b;
+}
+
+.meta-tag {
+    background-color: white;
+    border: 1px solid #cbd5e1;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.post-image-placeholder {
+    width: 160px;
+    height: 160px;
+    background-color: #d1d5db; /* Grey square placeholder */
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+/* --- "Never Miss Out" CTA Card --- */
+.newsletter-cta {
+    background-color: #e6eef3; /* Slightly lighter than post list */
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cta-title {
+    color: #b8860b; /* Goldenrod color from screenshot */
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+    font-weight: 800;
+}
+
+.cta-subtitle {
+    color: #334155;
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.cta-form {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 10px;
+}
+
+.cta-form input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    outline: none;
+}
+
+.cta-form button {
+    background-color: #155e75; /* Dark Teal */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.cta-form button:hover {
+    background-color: #104b5e;
+}
+
+.cta-disclaimer {
+    font-size: 11px;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    #posts-section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #posts-sidebar {
+        width: 100%;
+        display: flex;
+        gap: 30px;
+    }
+    
+    #posts-list {
+        height: auto;
+        overflow: visible;
+        padding: 30px;
+    }
+    
+    .post {
+        flex-direction: column-reverse;
+    }
+    
+    .post-image-placeholder {
+        width: 100%;
+        height: 200px;
+    }
+}

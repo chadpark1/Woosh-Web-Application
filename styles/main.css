@@ -1,0 +1,337 @@
+/* ===========================
+    Header / Hero Section
+    =========================== */
+
+#header {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #ffffff 85vh,
+        rgb(240, 244, 247) 110vh,
+        rgb(240, 244, 247) 100%
+    );
+    padding-bottom: 125px;
+}
+
+#header-panel-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 75vh;
+}
+
+#line-1,
+#line-2,
+#line-3 {
+    display: block;
+    color: rgb(28, 74, 97);
+    font-size: 40px;
+    font-weight: 500;
+}
+
+
+#slogan {
+    padding-left: 50px;
+}
+
+/* Highlighted "WOOSH" word in hero */
+#highlight {
+    display: block;
+    color: rgb(38, 139, 210) !important;
+    font-size: 96px !important;
+    font-weight: 600;
+    padding: 18px 0;
+    letter-spacing: 2px;
+    transform: scale(0.98);
+    filter: saturate(1);
+    transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1),
+                filter 0.55s ease;
+}
+
+/* Slight pop-in effect when page finishes loading */
+body.loaded #highlight {
+    transform: scale(1);
+    filter: saturate(1.05);
+}
+
+#header-image {
+    width: 50vw;
+}
+
+/* ===========================
+    Features Section (Header Panel 2)
+    =========================== */
+
+#header-panel-2 {
+    width: 100%;
+    margin-top: 250px;
+    scroll-margin-top: 100px;
+}
+
+#header-panel-2-title {
+    text-align: center;
+    color: rgb(28, 74, 97);
+    font-size: 48px;
+    font-weight: bold;
+}
+
+#header-panel-2-slogan {
+    text-align: center;
+    color: rgb(28, 74, 97);
+    font-size: 24px;
+}
+
+#features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    width: 700px;
+    height: 500px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.features-grid-item {
+    background-color: white;
+    border-radius: 15px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.features-grid-item img {
+    width: 60px;
+    height: 60px;
+}
+
+.features-grid-item h2 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.features-grid-item h3 {
+    font-size: 18px;
+    color: rgb(28, 74, 97);
+    margin: 10px 0;
+}
+
+/* "Shine" animation (not currently applied to any element) */
+@keyframes shine {
+    from {
+        box-shadow: 0 0 0 rgba(1, 119, 179, 0);
+    }
+    60% {
+        box-shadow: 0 8px 24px rgba(1, 119, 179, 0.4);
+    }
+    to {
+        box-shadow: 0 0 0 rgba(1, 119, 179, 0);
+    }
+}
+
+/* ===========================
+    Delivery Process Section
+    =========================== */
+
+#delivery-process {
+    width: 100%;
+    background-color: #ffffff;
+    padding-bottom: 80px;
+}
+
+#delivery-process-container {
+    max-width: 100%;
+    height: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+#delivery-process-title {
+    color:rgb(0, 51, 77);
+    font-size: 48px;
+}
+
+.delivery-process-step {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+}
+
+.step-number {
+    font-size: 96px;
+    width: 120px;
+    font-weight: bold;
+    color: rgb(199, 176, 0);
+    opacity: 0.6;
+    font-family: "work sans", sans-serif;
+    font-weight: 300;
+    margin-right: 30px;
+}
+
+.step-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.step-title {
+    font-size: 24px;
+    color: rgb(28, 74, 97);
+    margin: 0;
+}
+
+.step-description {
+    font-size: 16px;
+    color: rgb(80, 80, 80);
+    margin: 10px 0 0 0;
+}
+
+/* ===========================
+    "Why Woosh" Section
+    =========================== */
+
+#why-woosh-container {
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: rgb(240, 244, 247);
+}
+
+#why-woosh-container h2 {
+    text-align: center;
+    color: rgb(28, 74, 97);
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 80px;
+}
+
+#why-woosh-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    max-width: 800px;
+    max-height: 800px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.grid-item img {
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.grid-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Overlay for "Why Woosh" tiles */
+.grid-item .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    opacity: 0;
+    transform: translateY(1px);
+    border-radius: 20px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.grid-item:hover .overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.grid-item .overlay-content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.grid-item .overlay h3 {
+    margin: 20px;
+    font-size: 24px;
+}
+
+.grid-item .overlay p {
+    margin: 0 20px 20px 20px;
+    font-size: 16px;
+}
+
+/* ===========================
+    Legacy Footer Styles (Unused in current HTML)
+    =========================== */
+
+#footer {
+    width: 100%;
+    height: 500px;
+    padding-top: 50px;
+    background-color: rgb(0, 51, 77);
+    color: rgb(220, 220, 220);
+}
+
+#footer-flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-item {
+    margin: 0 50px;
+}
+
+#subscribe-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6dd5fa, #2980b9);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+#subscribe-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(109, 213, 250, 0.6);
+}
+
+/* ===========================
+    Responsive Adjustments
+    =========================== */
+
+@media (max-width: 1024px) {
+    #header-panel-1 {
+        flex-direction: column;
+        margin-top: 80px;
+    }
+
+    #header-image {
+        width: 80vw;
+    }
+}

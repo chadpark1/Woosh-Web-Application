@@ -1,0 +1,5 @@
+{
+  "name": "Bot Detection: Glitchy Mouse Tracker",
+  "description": "A frontend module to track mouse movements and detect unnatural 'glitchy' behavior indicative of bots, visualizing the analysis in real-time.",
+  "requestFramePermissions": []
+}

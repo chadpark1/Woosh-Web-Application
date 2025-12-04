@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/contact.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+    <title>Contact - Woosh</title>
+</head>
+<body>
+    <nav id="navbar-container">
+        <div id="left-navbar">
+            <img src="../assets/logo.png" id="logo" alt="Logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div id="right-navbar">
+            <button id="navbar-signup-button">Get Started</button>
+        </div>
+    </nav>
+
+    <div id="page-container">
+        
+        <div id="contact-header">
+            <h1 id="page-title">Contact</h1>
+            <div class="divider"></div>
+        </div>
+
+        <div class="contact-grid">
+            
+            <div class="contact-info reveal-on-scroll">
+                <p class="contact-intro">For any questions or assistance, our customer support team is available:</p>
+                
+                <div class="contact-detail">
+                    <span class="label">Email:</span>
+                    <a href="mailto:support@wooshnavigation.com" class="contact-link">support@wooshnavigation.com</a>
+                </div>
+
+                <div class="contact-detail">
+                    <span class="label">Phone:</span>
+                    <span class="phone-number">+1 (415) 888-4649</span>
+                </div>
+            </div>
+
+            <div class="contact-actions reveal-on-scroll delay-1">
+                <button class="btn-big-contact">For Business</button>
+                <button class="btn-big-contact">For Driver</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer class="woosh-footer">
+        <div class="footer-content">
+            <div class="footer-column footer-brand">
+                <h1>WOOSH</h1>
+            </div>
+            <div class="footer-column footer-subscribe">
+                <h2>Subscribe</h2>
+                <form action="#" method="post" class="subscribe-form">
+                    <div class="input-group">
+                        <input type="email" placeholder="Email Address" required>
+                        <button type="submit" aria-label="Subscribe">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <label class="privacy-checkbox">
+                        <input type="checkbox" required>
+                        I accept the <a href="#" class="privacy-link">privacy policy.</a>
+                    </label>
+                </form>
+            </div>
+            <div class="footer-column footer-links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-icons">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
+            </div>
+            <hr class="footer-separator">
+            <p class="copyright">&copy; 2025 Woosh Logistics Inc.</p>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            const onReady = () => {
+                document.body.classList.add('loaded');
+                const setScrolled = () => {
+                    if (window.scrollY > 10) document.body.classList.add('scrolled');
+                    else document.body.classList.remove('scrolled');
+                };
+                setScrolled();
+                window.addEventListener('scroll', setScrolled, { passive: true });
+
+                const observer = new IntersectionObserver(
+                    (entries, obs) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('in-view');
+                                obs.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.1 }
+                );
+                document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+            };
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', onReady);
+            else onReady();
+        })();
+    </script>
+</body>
+</html>

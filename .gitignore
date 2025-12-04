@@ -1,18 +1,27 @@
-# Node
+# ======================
+# Node / React / Frontend
+# ======================
 node_modules/
 npm-debug.log*
 package-lock.json
-
-# Frontend build output
+vite/
+.vite/
+dist/
 fronted/dist/
 fronted/.vite/
 *.log
-
-# Server build cache
+# ======================
+# Server build
+# ======================
 server/node_modules/
 server/dist/
 
+# ======================
 # Python / LangChain
+# ======================
+venv/
+.venv/
+env/
 __pycache__/
 *.pyc
 *.pyo
@@ -20,20 +29,22 @@ __pycache__/
 *.pdb
 *.egg-info/
 .eggs/
-.venv/
-env/
-venv/
 faiss_db/
 *.faiss
 *.npy
 *.npz
 
-# Environment / secrets
+# ======================
+# Environment / Secrets
+# ======================
 .env
 .env.local
 .env.*.local
+*.env
 
-# IDE / OS
+# ======================
+# IDE / System Junk
+# ======================
 .DS_Store
 .vscode/
 .idea/

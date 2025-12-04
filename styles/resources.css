@@ -1,0 +1,117 @@
+/* ===========================
+    FAQ Section Styles
+   =========================== */
+
+/* Container for the list */
+.faq-section {
+    max-width: 800px; /* Limits width so it doesn't look stretched on big screens */
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* Golden "Common Questions" Header */
+.section-heading {
+    text-align: center;
+    font-size: 2rem;
+    color: #b8860b; /* Dark Goldenrod/Bronze color from screenshot */
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+/* Individual Card Container */
+.faq-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Very subtle shadow */
+    margin-bottom: 15px;
+    overflow: hidden; /* Ensures content stays inside rounded corners */
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+/* The Clickable Question Button */
+.faq-question {
+    width: 100%;
+    background-color: white;
+    color: var(--woosh-blue);
+    padding: 20px 25px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.2s;
+}
+
+.faq-question:hover {
+    background-color: #fafafa;
+}
+
+/* The Arrow Icon */
+.faq-question i {
+    font-size: 0.9rem;
+    color: #888;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when active */
+.faq-question.active i {
+    transform: rotate(180deg);
+    color: var(--woosh-blue);
+}
+
+/* The Answer Panel (Hidden by default) */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background-color: white;
+    padding: 0 25px; /* Side padding always present */
+}
+
+.faq-answer p {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ===========================
+    "Still Need Help" Section
+   =========================== */
+
+.support-section {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.support-section h2 {
+    font-size: 2.2rem;
+    color: var(--woosh-blue);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.btn-support {
+    background-color: #1a5c7a; /* Dark Teal from screenshot */
+    color: white;
+    padding: 15px 35px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s, transform 0.1s;
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-support:hover {
+    background-color: #144a63;
+}
+
+.btn-support:active {
+    transform: translateY(1px);
+}

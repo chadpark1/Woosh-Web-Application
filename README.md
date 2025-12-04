@@ -1,0 +1,3 @@
+Woosh is a Berkeley Skydeck-backed startup that aims to revolutionize local business deliveries (less-than-pallet loads; 50-1000 pounds) by delivering to local businesses via empty space within commuter vehicles. They plan to launch in 2027 and have a couple companies (i.e. medical supplies company) interested in this opportunity.
+
+We are tasked with creating a full-stack website that provides users with secure authentication, a safe and reliable database, and an intuitive, innovative UI/UX design, along with integrated features such as a chatbot. If time permits and our clients approve, we may also include dashboards for managing deliveries and implement app-like functionality where businesses can place orders and drivers can track and fulfill them.

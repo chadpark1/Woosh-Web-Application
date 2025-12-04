@@ -1,0 +1,130 @@
+/* ===========================
+    Driver Form Page Styles
+   =========================== */
+
+/* Video Placeholder */
+.video-placeholder {
+    width: 100%;
+    max-width: 900px;
+    height: 400px;
+    background-color: #dcdcdc; /* Light grey */
+    margin: 40px auto 60px auto; /* Centered */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 800;
+    color: black;
+    border-radius: 4px;
+}
+
+/* Form Container */
+.driver-form-wrapper {
+    max-width: 800px;
+    margin: 0 auto 100px auto;
+}
+
+.form-section-heading {
+    color: #cda434; /* Golden/Yellow color from screenshot */
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Generic Form Styles */
+.driver-form .form-group {
+    margin-bottom: 25px;
+}
+
+.driver-form label {
+    display: block;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.driver-form label.required::after {
+    content: " *";
+    color: #e74c3c;
+}
+
+/* Inputs */
+.driver-form input[type="text"],
+.driver-form input[type="email"],
+.driver-form input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b0bec5;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.driver-form input:focus {
+    border-color: #1f7a8c;
+}
+
+/* Name Row Split */
+.driver-form .name-row {
+    display: flex;
+    gap: 20px;
+}
+
+.driver-form .name-col {
+    flex: 1;
+}
+
+.driver-form .sub-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #7f8c8d;
+    margin-top: 4px;
+}
+
+/* Checkbox & Radio Groups */
+.checkbox-group,
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.check-option,
+.radio-option {
+    font-weight: 400 !important; /* Override bold label */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* Custom spacing for inputs inside options */
+.check-option input,
+.radio-option input {
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Submit Button Reuse */
+.driver-form .btn-submit {
+    background-color: #155e75;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+
+.driver-form .btn-submit:hover {
+    background-color: #104b5e;
+}

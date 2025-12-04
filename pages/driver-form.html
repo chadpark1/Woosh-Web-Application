@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/driver-form.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+    <title>Driver Form - Woosh</title>
+</head>
+<body>
+    <nav id="navbar-container" style="padding-top: 10px;">
+        <div id="left-navbar">
+            <img src="../assets/logo.png" id="logo" alt="Logo">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div id="right-navbar">
+            <button id="navbar-signup-button">Get Started</button>
+        </div>
+    </nav>
+
+    <div id="page-container">
+        
+        <h1 id="page-title">Woosh Driver Form</h1>
+
+        <div class="video-placeholder reveal-on-scroll">
+            <span>Video</span>
+        </div>
+
+        <div class="driver-form-wrapper reveal-on-scroll delay-1">
+            <h2 class="form-section-heading">SIGN UP FOR WOOSH</h2>
+            <div class="divider" style="margin-bottom: 30px; background-color: #e0e0e0;"></div>
+
+            <form class="driver-form">
+                
+                <div class="form-group">
+                    <label class="required">Name</label>
+                    <div class="name-row">
+                        <div class="name-col">
+                            <input type="text" name="first-name">
+                            <span class="sub-label">First</span>
+                        </div>
+                        <div class="name-col">
+                            <input type="text" name="last-name">
+                            <span class="sub-label">Last</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="required">Email</label>
+                    <input type="email" name="email">
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label>What type of vehicle do you primarily drive?</label>
+                    <div class="checkbox-group">
+                        <label class="check-option"><input type="checkbox" name="vehicle" value="sedan"> Sedan</label>
+                        <label class="check-option"><input type="checkbox" name="vehicle" value="suv"> SUV</label>
+                        <label class="check-option"><input type="checkbox" name="vehicle" value="hatchback"> Hatchback</label>
+                        <label class="check-option"><input type="checkbox" name="vehicle" value="truck"> Pickup Truck</label>
+                        <label class="check-option"><input type="checkbox" name="vehicle" value="van"> Van</label>
+                        <label class="check-option"><input type="checkbox" name="vehicle" value="other"> Other</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="required">How frequently do you drive each week?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="freq" value="daily"> Daily</label>
+                        <label class="radio-option"><input type="radio" name="freq" value="several"> Several times a week</label>
+                        <label class="radio-option"><input type="radio" name="freq" value="weekly"> Weekly</label>
+                        <label class="radio-option"><input type="radio" name="freq" value="rarely"> Rarely</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="required">On average, how long does it take you to commute (e.g. from home to work and back)?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="commute" value="under_30"> Under 30 minutes</label>
+                        <label class="radio-option"><input type="radio" name="commute" value="30_60"> 30 - 60 minutes</label>
+                        <label class="radio-option"><input type="radio" name="commute" value="over_60"> Over 60 minutes</label>
+                        <label class="radio-option"><input type="radio" name="commute" value="other"> Other</label>
+                    </div>
+                    <span class="sub-label" style="margin-left: 20px;">(Round Trip / Both ways)</span>
+                </div>
+
+                <div class="form-group">
+                    <label>City, State</label>
+                    <input type="text" name="city-state">
+                </div>
+
+                <div class="form-group">
+                    <label class="required">Zip Code</label>
+                    <input type="text" name="zip">
+                </div>
+
+                <div class="form-group">
+                    <label class="required">For a 20-minute "Woosh It!" trip detour, how much would you expect to be compensated?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="comp20" value="5-10"> $5 - 10</label>
+                        <label class="radio-option"><input type="radio" name="comp20" value="10-20"> $10 - 20</label>
+                        <label class="radio-option"><input type="radio" name="comp20" value="15-30"> $15 - 30</label>
+                        <label class="radio-option"><input type="radio" name="comp20" value="30+"> $30+</label>
+                    </div>
+                    <span class="sub-label" style="margin-left: 20px;">(plausible minimum compensation)</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="required">For a 10-minute "Woosh It!" trip detour, how much would you expect to be compensated?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="comp10" value="3-5"> $3 - 5</label>
+                        <label class="radio-option"><input type="radio" name="comp10" value="5-10"> $5 - 10</label>
+                        <label class="radio-option"><input type="radio" name="comp10" value="10-20"> $10 - 20</label>
+                        <label class="radio-option"><input type="radio" name="comp10" value="20+"> $20+</label>
+                    </div>
+                    <span class="sub-label" style="margin-left: 20px;">(plausible minimum compensation)</span>
+                </div>
+
+                <div class="form-group">
+                    <label>Are you interested in full-time driving opportunities with Woosh?</label>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="fulltime" value="yes"> Yes</label>
+                        <label class="radio-option"><input type="radio" name="fulltime" value="no"> No</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Submit</button>
+
+            </form>
+        </div>
+
+    </div>
+
+    <footer class="woosh-footer">
+        <div class="footer-content">
+            <div class="footer-column footer-brand">
+                <h1>WOOSH</h1>
+            </div>
+            <div class="footer-column footer-subscribe">
+                <h2>Subscribe</h2>
+                <form action="#" method="post" class="subscribe-form">
+                    <div class="input-group">
+                        <input type="email" placeholder="Email Address" required>
+                        <button type="submit" aria-label="Subscribe">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <label class="privacy-checkbox">
+                        <input type="checkbox" required>
+                        I accept the <a href="#" class="privacy-link">privacy policy.</a>
+                    </label>
+                </form>
+            </div>
+            <div class="footer-column footer-links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-icons">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
+            </div>
+            <hr class="footer-separator">
+            <p class="copyright">&copy; 2025 Woosh Logistics Inc.</p>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            const onReady = () => {
+                document.body.classList.add('loaded');
+                const setScrolled = () => {
+                    if (window.scrollY > 10) document.body.classList.add('scrolled');
+                    else document.body.classList.remove('scrolled');
+                };
+                setScrolled();
+                window.addEventListener('scroll', setScrolled, { passive: true });
+
+                const observer = new IntersectionObserver(
+                    (entries, obs) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('in-view');
+                                obs.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.1 }
+                );
+                document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+            };
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', onReady);
+            else onReady();
+        })();
+    </script>
+</body>
+</html>

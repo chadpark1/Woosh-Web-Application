@@ -121,8 +121,7 @@
                 <div class="step-content">
                     <h2 class="step-title">Loading</h2>
                     <p class="step-description">
-                        Create an account and schedule your deliveries effortlessly — your first one's free, plus up
-                        to 40% off pilot rates.
+                        The logistics journey starts with precision and care, as each item is securely loaded and prepared for on-time delivery.
                     </p>
                 </div>
             </div>
@@ -131,8 +130,7 @@
                 <div class="step-content">
                     <h2 class="step-title">On the Road</h2>
                     <p class="step-description">
-                        Create an account and schedule your deliveries effortlessly — your first one's free, plus up
-                        to 40% off pilot rates.
+                        Woosh ensures fast, reliable transportation powered by advanced technology and real-time tracking.
                     </p>
                 </div>
             </div>
@@ -141,8 +139,7 @@
                 <div class="step-content">
                     <h2 class="step-title">Delivery</h2>
                     <p class="step-description">
-                        Create an account and schedule your deliveries effortlessly — your first one's free, plus up
-                        to 40% off pilot rates.
+                        Every delivery arrives safely and on time, strengthening customer trust and satisfaction with each step.
                     </p>
                 </div>
             </div>
@@ -151,8 +148,7 @@
                 <div class="step-content">
                     <h2 class="step-title">Satisfaction</h2>
                     <p class="step-description">
-                        Create an account and schedule your deliveries effortlessly — your first one's free, plus up
-                        to 40% off pilot rates.
+                        Woosh delivers not only goods, but also reliability and satisfaction to every customer.
                     </p>
                 </div>
             </div>
@@ -328,16 +324,14 @@
                             }
                         });
                     },
-                    { threshold: 0.15 } // Reveal when ~15% of the element is visible
+                    { threshold: 0.15 } 
                 );
 
-                // Attach observer to all scroll-reveal elements
                 document
                     .querySelectorAll('.reveal-on-scroll')
                     .forEach(el => observer.observe(el));
             };
 
-            // Run on DOMContentLoaded or immediately if DOM is already ready
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', onReady);
             } else {

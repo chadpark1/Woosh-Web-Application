@@ -283,3 +283,264 @@
         height: 200px;
     }
 }
+
+/* ===========================
+    Create Post Modal Styles
+   =========================== */
+
+/* The Overlay (Background) */
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 2000; /* On top of everything */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* State class to show modal */
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* The Modal Box */
+.modal-content {
+    background-color: #eef2f6; /* Matches the screenshot bg */
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto; /* Scroll if screen is too small */
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+/* Header */
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.modal-header h2 {
+    font-size: 1.5rem;
+    color: #1a3b5d;
+    margin: 0;
+    font-weight: 700;
+}
+
+.close-modal-btn {
+    font-size: 1.2rem;
+    color: #1a3b5d;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-modal-btn:hover {
+    color: #155e75;
+}
+
+.header-spacer {
+    width: 20px; /* Balances the close icon for centering */
+}
+
+/* Form Groups */
+.modal-group {
+    margin-bottom: 25px;
+}
+
+.modal-group label {
+    display: block;
+    font-size: 1rem;
+    color: #1a3b5d;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* Inputs & Textarea */
+.modal-input, 
+.modal-select {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: none;
+    background-color: white;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+/* Attachment Area */
+.file-upload-box {
+    border: 2px dashed #ccc;
+    background-color: #f4f7f9;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    color: #1a3b5d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.file-upload-box i {
+    font-size: 2rem;
+    color: #64748b;
+}
+
+.file-upload-box p {
+    margin: 5px 0 15px 0;
+    font-size: 0.95rem;
+    color: #1a3b5d;
+}
+
+.btn-upload-trigger {
+    background-color: #d1d5db; /* Light grey button */
+    border: none;
+    padding: 8px 24px;
+    border-radius: 6px;
+    color: #1a3b5d;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-upload-trigger:hover {
+    background-color: #9ca3af;
+}
+
+/* Description Area (With fake toolbar) */
+.description-wrapper {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    min-height: 150px;
+}
+
+.modal-textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    flex-grow: 1;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    min-height: 100px;
+}
+
+.text-toolbar {
+    display: flex;
+    gap: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #eee; /* Subtle separator */
+    color: #1a3b5d;
+}
+
+.text-toolbar i {
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.text-toolbar i:hover {
+    color: #155e75;
+}
+
+/* Custom Select Dropdown Styling */
+.select-wrapper {
+    position: relative;
+    width: 150px; /* Short width like in screenshot */
+}
+
+.modal-select {
+    appearance: none;
+    cursor: pointer;
+}
+
+.select-wrapper i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #64748b;
+    font-size: 0.8rem;
+}
+
+/* Post Button */
+.btn-post-submit {
+    width: 100%;
+    background-color: #155e75; /* Dark Teal */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+
+.btn-post-submit:hover {
+    background-color: #104b5e;
+}
+
+/* --- Updated Text Editor Styles --- */
+
+.description-wrapper {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    height: 150px; /* Fixed height container */
+}
+
+/* This replaces the old .modal-textarea */
+.modal-editor {
+    width: 100%;
+    border: none;
+    outline: none;
+    flex-grow: 1; /* Fills available space */
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #333;
+    overflow-y: auto; /* Scroll text if it gets too long */
+    padding-bottom: 10px;
+}
+
+/* Specific styling for placeholder text behavior if needed */
+.modal-editor:empty:before {
+    content: ''; 
+    color: #999;
+}
+
+/* Cursor pointer for upload box to show it's clickable */
+.file-upload-box {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.file-upload-box:hover {
+    background-color: #ecf3f7;
+}

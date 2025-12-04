@@ -34,10 +34,10 @@
     <div id="page-container">
         
         <div id="blog-header">
-            <h1 id="page-title">Blog</h1>
+            <h1 class="page-title-teal">Blog</h1>
             <h3 id="page-subtitle">Explore fresh trends, smart innovations, and insider stories from our delivery experts.</h3>
             
-            <div class="divider"></div>
+            <div class="divider contact-divider"></div>
             
             <div id="controls-row">
                 <div class="search-wrapper">
@@ -80,7 +80,7 @@
                         <span class="post-date">Mar 1</span>
                         <h2>Title of Article<br>Title of Article Continued</h2>
                         <p class="post-excerpt">
-                            Article text article text article text article text article text article text article text article text article text article text article text article text article text article text...
+                            Article text article text article text article text article text article text article text article text article text article text article text article text article text...
                         </p>
                         <div class="post-meta">
                             <span class="meta-tag">Filter</span>
@@ -155,6 +155,65 @@
 
     </div>
 
+    <div id="create-post-modal" class="modal-overlay">
+        <div class="modal-content reveal-modal">
+            
+            <div class="modal-header">
+                <i class="fas fa-arrow-left close-modal-btn"></i>
+                <h2>Create Post</h2>
+                <div class="header-spacer"></div> 
+            </div>
+
+            <form class="create-post-form" onsubmit="event.preventDefault();">
+                
+                <div class="modal-group">
+                    <label>Title</label>
+                    <input type="text" class="modal-input" placeholder="">
+                </div>
+
+                <div class="modal-group">
+                    <label>Attachment</label>
+                    <div class="file-upload-box" id="drop-zone">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p id="file-upload-text">Choose a file or drag & drop it here</p>
+                        <button type="button" class="btn-upload-trigger">Upload</button>
+                        <input type="file" id="real-file-input" hidden>
+                    </div>
+                </div>
+
+                <div class="modal-group">
+                    <label>Description</label>
+                    <div class="description-wrapper">
+                        <div class="modal-editor" contenteditable="true"></div>
+                        
+                        <div class="text-toolbar">
+                            <i class="fas fa-bold" id="btn-bold" title="Bold"></i>
+                            <i class="fas fa-underline" id="btn-underline" title="Underline"></i>
+                            <i class="fas fa-italic" id="btn-italic" title="Italic"></i>
+                            <i class="fas fa-pen" title="Edit"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-group">
+                    <label>Category</label>
+                    <div class="select-wrapper">
+                        <select class="modal-select">
+                            <option value="" disabled selected></option>
+                            <option value="news">Industry News</option>
+                            <option value="updates">Company Updates</option>
+                            <option value="tips">Tips & Tricks</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-post-submit">Post</button>
+            
+            </form>
+        </div>
+    </div>
+
     <footer class="woosh-footer">
         <div class="footer-content">
             <div class="footer-column footer-brand">
@@ -199,6 +258,7 @@
 
     <script>
         (function () {
+            // --- Page Init & Scroll Logic ---
             const onReady = () => {
                 document.body.classList.add('loaded');
                 const setScrolled = () => {
@@ -222,6 +282,55 @@
             };
             if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', onReady);
             else onReady();
+
+            // --- Modal Logic ---
+            const modal = document.getElementById('create-post-modal');
+            const openBtn = document.getElementById('new-post-button');
+            const closeBtn = document.querySelector('.close-modal-btn');
+
+            openBtn.addEventListener('click', () => modal.classList.add('active'));
+            closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.classList.remove('active');
+            });
+
+            // --- File Upload Logic ---
+            const dropZone = document.getElementById('drop-zone');
+            const fileInput = document.getElementById('real-file-input');
+            const uploadText = document.getElementById('file-upload-text');
+
+            // Trigger file input when clicking the box
+            dropZone.addEventListener('click', () => fileInput.click());
+
+            // Update text when file is selected
+            fileInput.addEventListener('change', () => {
+                if (fileInput.files.length > 0) {
+                    uploadText.textContent = "Selected: " + fileInput.files[0].name;
+                    uploadText.style.color = "#155e75";
+                    uploadText.style.fontWeight = "bold";
+                }
+            });
+
+            // --- Text Editor Logic (Rich Text) ---
+            const btnBold = document.getElementById('btn-bold');
+            const btnItalic = document.getElementById('btn-italic');
+            const btnUnderline = document.getElementById('btn-underline');
+
+            btnBold.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent focus loss
+                document.execCommand('bold');
+            });
+
+            btnItalic.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.execCommand('italic');
+            });
+
+            btnUnderline.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.execCommand('underline');
+            });
+
         })();
     </script>
 </body>

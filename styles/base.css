@@ -266,7 +266,7 @@ body.loaded .reveal-on-load {
     =========================== */
 
 .woosh-footer {
-    background-color: var(--woosh-blue);
+    background-color: rgb(28, 126, 140);
     color: var(--woosh-white);
     padding: 40px 5%;
     font-size: 16px;

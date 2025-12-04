@@ -1,0 +1,145 @@
+/* ===========================
+    Contact Business Page Styles
+   =========================== */
+
+/* Layout Grid */
+.business-contact-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px; /* Large gap between form and sidebar */
+    margin-bottom: 100px;
+    margin-top: 40px;
+}
+
+/* --- Left Side: Form --- */
+.business-form-container {
+    flex: 1.5; /* Takes up more space than sidebar */
+    max-width: 600px;
+}
+
+.business-form .form-group {
+    margin-bottom: 25px;
+}
+
+.business-form label {
+    display: block;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* Red Asterisk for required fields */
+.business-form label.required::after {
+    content: " *";
+    color: #e74c3c;
+}
+
+/* Text Inputs */
+.business-form input[type="text"],
+.business-form input[type="email"],
+.business-form input[type="tel"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #b0bec5; /* Muted blue-grey border */
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box; /* Ensures padding doesn't break width */
+    transition: border-color 0.2s;
+}
+
+.business-form input:focus {
+    border-color: #1f7a8c; /* Woosh Teal on focus */
+}
+
+/* Split Name Row (First/Last) */
+.name-row {
+    display: flex;
+    gap: 20px;
+}
+
+.name-col {
+    flex: 1;
+}
+
+.sub-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-top: 5px;
+}
+
+/* Submit Button */
+.btn-submit {
+    background-color: #155e75; /* Dark Teal */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #104b5e;
+}
+
+/* --- Right Side: Sidebar --- */
+.contact-sidebar {
+    flex: 1;
+    background-color: #e6eef1; /* Light grey/blue background */
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 10px; /* Slight offset to align with inputs visually */
+}
+
+.contact-sidebar h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.sidebar-item i {
+    color: #1f7a8c; /* Icon color */
+    font-size: 1.2rem;
+    width: 20px; /* Fixed width for alignment */
+    text-align: center;
+}
+
+.sidebar-item a {
+    color: #1f7a8c;
+    text-decoration: underline;
+    transition: opacity 0.2s;
+}
+
+.sidebar-item a:hover {
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .business-contact-grid {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .contact-sidebar {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

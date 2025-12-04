@@ -1,0 +1,156 @@
+/* ===========================
+    Team Section Styles
+   =========================== */
+
+.card-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 50px;
+    width: 100%;
+}
+
+/* Card Container */
+.card {
+    display: flex;
+    background-color: var(--woosh-white);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    overflow: hidden;
+    height: 320px; /* Fixed height is crucial for the scrolling to work */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(9, 44, 72, 0.1);
+}
+
+/* Left Quarter: Image (25%) */
+.card-image {
+    flex: 0 0 25%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px; /* Optional: keeps image corners consistent with design */
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+/* Right Three-Quarters: Content */
+.card-content {
+    flex: 1;
+    /* UPDATE: Added 40px top/bottom padding to create the fixed spacing */
+    padding: 40px 120px; 
+    display: grid;
+    grid-template-areas: "stack";
+    align-items: center;
+    position: relative;
+    cursor: default;
+    
+    /* Ensures the padding constrains the inner height */
+    box-sizing: border-box; 
+    overflow: hidden; 
+}
+
+/* Stack both text elements in the same grid area */
+.card-intro, 
+.card-description {
+    grid-area: stack;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Name and Title Styles */
+.card-intro h3 {
+    margin: 0;
+    font-size: 32px;
+    color: var(--woosh-blue);
+    font-weight: 700;
+}
+
+.card-intro p {
+    margin: 8px 0 0 0;
+    color: rgb(28, 126, 140);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+}
+
+/* Description Styles */
+.card-description {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(15px);
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 1rem;
+
+    /* UPDATE: Scroll Logic */
+    max-height: 100%; /* Limits height to the space available inside the padding */
+    overflow-y: auto; /* Enables vertical scrolling */
+    padding-right: 10px; /* Prevents text from touching the scrollbar */
+}
+
+/* Hover Logic */
+.card-content:hover .card-intro {
+    opacity: 0;
+    transform: translateY(-15px);
+}
+
+.card-content:hover .card-description {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+/* ===========================
+   Scrollbar Styling (Webkit)
+   Makes the scrollbar subtle
+   =========================== */
+.card-description::-webkit-scrollbar {
+    width: 6px;
+}
+
+.card-description::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+.card-description::-webkit-scrollbar-thumb {
+    background-color: #d1d5db; /* Light grey thumb */
+    border-radius: 10px;
+}
+
+.card-description::-webkit-scrollbar-thumb:hover {
+    background-color: #9ca3af; /* Darker grey on hover */
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+        height: auto;
+        min-height: 350px;
+    }
+
+    .card-image {
+        height: 200px;
+    }
+
+    .card-content {
+        padding: 30px;
+        min-height: 150px;
+        /* On mobile, we usually let it grow rather than scroll, 
+           but if you want scrolling on mobile too, set a fixed height here. */
+    }
+}

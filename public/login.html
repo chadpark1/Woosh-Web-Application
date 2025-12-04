@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+  />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/login.css">
+
+  <title>Login - Woosh</title>
+</head>
+<body>
+
+  <div class="login-card">
+      <h1>Login</h1>
+
+      <form id="loginForm">
+          <div class="input-group">
+              <label>Username/Email</label>
+              <div class="input-wrapper">
+                  <i class="far fa-user input-icon"></i>
+                  <input type="text" id="emailInput" class="login-input" placeholder="Type your username..." required>
+              </div>
+          </div>
+
+          <div class="input-group">
+              <label>Password</label>
+              <div class="input-wrapper">
+                  <i class="fas fa-lock input-icon"></i>
+                  <input type="password" id="passwordInput" class="login-input" placeholder="Type your password..." required>
+              </div>
+          </div>
+
+          <a href="#" class="forgot-pass">Forgot password?</a>
+
+          <button onclick = "signIn()" type="submit" class="btn-login">Login</button>
+          <a onclick = "signUp()" href="#" class="btn-signup">Sign Up</a>
+      </form>
+
+      <div class="social-label">Or Sign Up Using</div>
+      <div class="social-icons">
+          <a href="#" class="social-btn"><i class="fab fa-google"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-apple"></i></a>
+      </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script>
+    // Initialize Supabase client
+    const SUPABASE_URL = 'https://rkmouctjqrsqgukjrsoz.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJrbW91Y3RqcXJzcWd1a2pyc296Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA0NTk1OTcsImV4cCI6MjA3NjAzNTU5N30.vFhkvO8-yWwn0y986Qry4uRX2Ggcu9T60tjzFc6zqF4';
+    const client = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const signUp = async () => {
+        const emailInput = document.getElementById('emailInput').value;
+        const passwordInput = document.getElementById('passwordInput').value;
+        const {data, error} = await client.auth.signUp({email: emailInput, password: passwordInput});
+        if (error) {console.error(error);}
+    }
+
+    const signIn = async () => {
+        const emailInput = document.getElementById('emailInput').value;
+        const passwordInput = document.getElementById('passwordInput').value;
+        const {data, error} = await client.auth.signInWithPassword({email: emailInput, password: passwordInput});
+        if (error) {console.error(error);}
+    }
+</script>
+
+
+</body>
+</html>

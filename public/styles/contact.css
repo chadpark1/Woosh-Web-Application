@@ -1,0 +1,106 @@
+/* ===========================
+    Contact Section Styles
+   =========================== */
+
+/* Layout Grid */
+.contact-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 120px; /* Space before footer */
+    margin-top: 50px;
+}
+
+/* --- Left Column: Info --- */
+.contact-info {
+    flex: 1;
+    font-size: 1.25rem; /* Large readable text */
+    color: #334155;
+    line-height: 1.6;
+}
+
+.contact-intro {
+    margin-top: 0;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.contact-detail {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-detail .label {
+    color: #1e293b;
+    font-weight: 500;
+}
+
+.contact-link {
+    color: #4dafa0; /* The specific light green/teal from image */
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.contact-link:hover {
+    color: #1f7a8c;
+}
+
+.phone-number {
+    color: #334155;
+}
+
+/* --- Right Column: Big Buttons --- */
+.contact-actions {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Aligns buttons to the right side */
+    gap: 20px;
+}
+
+.btn-big-contact {
+    background-color: #155e75; /* Dark Teal */
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    padding: 25px 40px;
+    width: 100%;
+    max-width: 350px; /* Prevents them from getting too wide */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.btn-big-contact:hover {
+    background-color: #104b5e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.btn-big-contact:active {
+    transform: translateY(1px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contact-grid {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .contact-actions {
+        align-items: stretch; /* Full width buttons on mobile */
+        margin-top: 30px;
+    }
+
+    .btn-big-contact {
+        max-width: 100%;
+    }
+}

@@ -62,6 +62,12 @@
     gap: 20px;
 }
 
+.contact-actions a {
+    width: 100%;
+    max-width: 350px;
+    text-decoration: none;
+}
+
 .btn-big-contact {
     background-color: #155e75; /* Dark Teal */
     color: white;
@@ -71,7 +77,6 @@
     border-radius: 6px;
     padding: 25px 40px;
     width: 100%;
-    max-width: 350px; /* Prevents them from getting too wide */
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;

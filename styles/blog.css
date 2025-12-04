@@ -138,6 +138,7 @@
     justify-content: space-between;
     align-items: flex-start;
     gap: 40px;
+    padding: 20px;
 }
 
 .post-content {
@@ -543,4 +544,14 @@
 }
 .file-upload-box:hover {
     background-color: #ecf3f7;
+}
+
+.post-link {
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.post-link:hover {
+    background-color: #e2e8f0;
 }
